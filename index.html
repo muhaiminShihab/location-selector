@@ -48,7 +48,8 @@
         const selector = document.querySelector('#selector');
         let selectorType = 0;
 
-        fetch('./divisions.json')
+        let url = 'https://' + window.location.host;
+        fetch(url + '/divisions.json')
             .then(respose => respose.json())
             .then(data => {
                 // get divisions
@@ -65,7 +66,7 @@
                 division.innerText = selector.value;
                 selector.innerHTML = '';
 
-                fetch('./districts.json')
+                fetch(url + '/districts.json')
                     .then(respose => respose.json())
                     .then(data => {
                         // get districts
@@ -82,7 +83,7 @@
                 district.innerText = selector.value;
                 selector.innerHTML = '';
 
-                fetch('./upazilas.json')
+                fetch(url + '/upazilas.json')
                     .then(respose => respose.json())
                     .then(data => {
                         // get districts
